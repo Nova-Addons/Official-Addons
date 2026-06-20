@@ -2,7 +2,7 @@ plugins {
     id("addons.common-conventions")
 }
 
-version = "0.7.0-alpha.1"
+version = "0.7.0-RC.1"
 
 addon {
     name = "Jetpacks"
