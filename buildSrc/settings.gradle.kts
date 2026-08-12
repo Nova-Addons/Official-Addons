@@ -5,7 +5,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            from("xyz.xenondevs.nova:catalog:0.24.0")
+            from("xyz.xenondevs.nova:catalog:0.24.0") // !! also update in root settings.gradle.kts !!
         }
     }
 }

@@ -8,6 +8,15 @@ dependencies {
     implementation(project(":simple-upgrades"))
 }
 
+origami {
+    runServer.plugins.from(
+        project(":simple-upgrades")
+            .tasks
+            .withType<Jar>()
+            .matching { it.name == "addonJar" }
+    )
+}
+
 addon {
     name = "Machines"
     main = "xyz.xenondevs.nova.addon.machines.Machines"

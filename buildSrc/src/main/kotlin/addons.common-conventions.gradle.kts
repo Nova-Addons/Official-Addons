@@ -1,11 +1,9 @@
-
 import org.gradle.accessors.dm.LibrariesForLibs
+import xyz.xenondevs.origami.extension.OrigamiExtension
 
 group = "xyz.xenondevs.nova.addon"
 
 plugins {
-    `java-library`
-    kotlin("jvm")
     id("xyz.xenondevs.nova.nova-gradle-plugin")
     id("xyz.xenondevs.publish.plugin-publish")
 }
@@ -46,4 +44,8 @@ addon {
 pluginPublish {
     file = tasks.named<Jar>("addonJar").flatMap { it.archiveFile }
     githubRepository = "xenondevs/Nova-Addons"
+}
+
+extensions.configure<OrigamiExtension> {
+    runServer.workingDirectory.set(layout.dir(providers.gradleProperty("serverDir").map(::File)))
 }

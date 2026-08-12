@@ -5,6 +5,7 @@ include("logistics")
 include("machines")
 include("simple-upgrades")
 include("vanilla-hammers")
+include("all-addons")
 
 dependencyResolutionManagement {
     repositories {
@@ -13,7 +14,7 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            from("xyz.xenondevs.nova:catalog:0.24.0")
+            from("xyz.xenondevs.nova:catalog:0.24.0") // !! also update in buildSrc/settings.gradle.kts !!
         }
     }
 }
